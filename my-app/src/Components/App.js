@@ -30,13 +30,8 @@ export default class App extends React.Component {
     });
   }
 
-  getNotes() {
-    return ["A", "B", "C"];
-  }
-
   getNote() {
-    const notes = this.getNotes();
-    return notes[Math.floor(Math.random() * notes.length)];
+    return this.props.notes[Math.floor(Math.random() * this.props.notes.length)];
   }
   
   getGame() {
@@ -44,7 +39,7 @@ export default class App extends React.Component {
       score={this.state.score} 
       questions={this.props.questions} 
       note={this.state.currentNote} 
-      notes={this.getNotes()} 
+      notes={this.props.notes} 
       onClick={(note) => this.handleClick(note)}
     />
   }
