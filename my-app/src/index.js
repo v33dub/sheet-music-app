@@ -4,6 +4,6 @@ import App from './Components/App';
 import './index.css';
 
 ReactDOM.render(
-  <App questions={3} notes={["A", "B", "C"]} />,
+  <App questions={3} notes={["C", "D", "G", "A", "B"]} />,
   document.getElementById('root')
 );
