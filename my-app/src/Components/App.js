@@ -14,7 +14,7 @@ export default class App extends React.Component {
   }
 
   handleClick(pianoKey) {
-    let correctAnswer = this.state.currentNote === pianoKey;
+    let correctAnswer = pianoKey.includes(this.state.currentNote);
     let score = this.state.score;
 
     if(correctAnswer) {
