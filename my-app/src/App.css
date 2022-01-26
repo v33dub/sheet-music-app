@@ -45,6 +45,17 @@
   top: -10px;
 }
 
+.Display .note .sharp {
+  height: 40px;
+  margin: -10px 0 0 -75px;
+  width: 25px;
+}
+
+.Display .note .flat {
+  margin: -20px 0 0 -75px;
+  width: 25px;
+}
+
 .Input {
   display: flex;
   justify-content: center;
