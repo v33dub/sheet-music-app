@@ -1,4 +1,5 @@
 import React from 'react';
+import Note from './Note';
 import trebleClef from '../images/trebleClef.png';
 
 export default class Display extends React.Component {
@@ -7,7 +8,7 @@ export default class Display extends React.Component {
         let keys = notes.map((note, i) => {
             return (
                 <div className={i % 2 === 0 ? "line" : "space"} data-note={note}>
-                    {this.props.note === note ? <div className="note"></div> : ""}
+                    {this.props.note === note ? <Note note={this.props.note} /> : ""}
                 </div>
             );
         });
