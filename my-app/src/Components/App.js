@@ -14,10 +14,9 @@ export default class App extends React.Component {
   }
 
   handleClick(pianoKey) {
-    let correctAnswer = pianoKey.includes(this.state.currentNote);
     let score = this.state.score;
 
-    if(correctAnswer) {
+    if(this.isSameNote(pianoKey)) {
       console.log("Correct!");
       score++;
     } else {
@@ -29,6 +28,15 @@ export default class App extends React.Component {
       questionsLeft: this.state.questionsLeft - 1,
       score: score
     });
+  }
+
+  isSameNote(pianoKey) {
+    return pianoKey.find(note => 
+      note.letter === this.state.currentNote.letter && 
+      note.octave === this.state.currentNote.octave &&
+      note.isSharp === this.state.currentNote.isSharp &&
+      note.isFlat === this.state.currentNote.isFlat
+    );
   }
 
   getNote() {
