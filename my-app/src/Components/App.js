@@ -1,5 +1,6 @@
 import React from 'react';
-import Game from './Game';
+import Display from './Display';
+import Input from './Input';
 import '../App.css';
 
 export default class App extends React.Component {
@@ -35,28 +36,26 @@ export default class App extends React.Component {
   }
   
   getGame() {
-    return <Game 
-      score={this.state.score} 
-      questions={this.props.questions} 
-      note={this.state.currentNote} 
-      notes={this.props.notes} 
-      onClick={(note) => this.handleClick(note)}
-    />
+    return (
+      <div className="App">
+        <div className="Score">
+          <p>{this.state.score}/{this.props.questions}</p>
+        </div>
+        <Display note={this.state.currentNote} />
+        <Input notes={this.props.notes} onClick={(note) => this.handleClick(note)} />
+      </div>
+    );
   }
 
   getScoreDisplay() {
     return (
-      <div>
+      <div className="App">
         <p>Your score is: {this.state.score} / {this.props.questions}</p>
       </div>
     );
   }
 
   render() {
-    return (
-      <div className="App">
-        {this.state.questionsLeft > 0 ? this.getGame() : this.getScoreDisplay()}
-      </div>
-    );
+    return this.state.questionsLeft > 0 ? this.getGame() : this.getScoreDisplay();
   }
 }
