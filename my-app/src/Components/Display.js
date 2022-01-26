@@ -7,32 +7,32 @@ export default class Display extends React.Component {
             <div className="Display">
                 <div className="staff">
                     <img src={trebleClef} alt="Treble Clef" className="clef" />
-                    <div className="line" data-note="f">
-                        {this.props.note === "F" ? <div className="note"></div> : ""}
+                    <div className="line" data-note="F5">
+                        {this.props.note === "F5" ? <div className="note"></div> : ""}
                     </div>
-                    <div className="space" data-note="e">
-                        {this.props.note === "E" ? <div className="note"></div> : ""}
+                    <div className="space" data-note="E5">
+                        {this.props.note === "E5" ? <div className="note"></div> : ""}
                     </div>
-                    <div className="line" data-note="d">
-                        {this.props.note === "D" ? <div className="note"></div> : ""}
+                    <div className="line" data-note="D5">
+                        {this.props.note === "D5" ? <div className="note"></div> : ""}
                     </div>
-                    <div className="space" data-note="c">
-                        {this.props.note === "C" ? <div className="note"></div> : ""}
+                    <div className="space" data-note="C5">
+                        {this.props.note === "C5" ? <div className="note"></div> : ""}
                     </div>
-                    <div className="line" data-note="b">
-                        {this.props.note === "B" ? <div className="note"></div> : ""}
+                    <div className="line" data-note="B5">
+                        {this.props.note === "B5" ? <div className="note"></div> : ""}
                     </div>
-                    <div className="space" data-note="a">
-                        {this.props.note === "A" ? <div className="note"></div> : ""}
+                    <div className="space" data-note="A5">
+                        {this.props.note === "A5" ? <div className="note"></div> : ""}
                     </div>
-                    <div className="line" data-note="g">
-                        {this.props.note === "G" ? <div className="note"></div> : ""}
+                    <div className="line" data-note="G4">
+                        {this.props.note === "G4" ? <div className="note"></div> : ""}
                     </div>
-                    <div className="space" data-note="f">
-                        {this.props.note === "F" ? <div className="note"></div> : ""}
+                    <div className="space" data-note="F4">
+                        {this.props.note === "F4" ? <div className="note"></div> : ""}
                     </div>
-                    <div className="line" data-note="e">
-                        {this.props.note === "E" ? <div className="note"></div> : ""}
+                    <div className="line" data-note="E4">
+                        {this.props.note === "E4" ? <div className="note"></div> : ""}
                     </div>
                 </div>
             </div>
