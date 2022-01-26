@@ -1,11 +1,23 @@
 .App {
   margin: 0 auto;
-  max-width: 200px;
+  max-width: 300px;
   text-align: center;
 }
 
 .Display {
   margin-bottom: 1em;
+}
+
+.Display .staff {
+  border-left: 4px solid black;
+  position: relative;
+}
+
+.Display .clef {
+  height: 180px;
+  left: 0;
+  position: absolute;
+  top: -40px;
 }
 
 .Display .line {
@@ -22,8 +34,10 @@
   background-color: black;
   border-radius: 100%;
   height: 22px;
+  left: 50%;
   position: absolute;
   top: 0;
+  transform: translateX(-50%);
   width: 34px; 
 }
 
