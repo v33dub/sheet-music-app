@@ -1,15 +1,37 @@
 import React from 'react';
-import Button from './Button';
 
 export default class Input extends React.Component {
     render() {
-        let buttons = this.props.notes.map((note, i) => {
-            return <Button key={note} note={note} onClick={() => this.props.onClick(note)} />
-        });
-
         return (
             <div className="Input">
-                {buttons}
+                <div className="keyGroup">
+                    <button className="key" onClick={() => this.props.onClick("C")}></button>
+                    <button className="key sharp" onClick={() => this.props.onClick("C#")}></button>
+                </div>
+
+                <div className="keyGroup">
+                    <button className="key" onClick={() => this.props.onClick("D")}></button>
+                    <button className="key sharp" onClick={() => this.props.onClick("D#")}></button>
+                </div>
+
+                <button className="key" onClick={() => this.props.onClick("E")}></button>
+
+                <div className="keyGroup">
+                    <button className="key" onClick={() => this.props.onClick("F")}></button>
+                    <button className="key sharp" onClick={() => this.props.onClick("F#")}></button>
+                </div>
+                
+                <div className="keyGroup">
+                    <button className="key" onClick={() => this.props.onClick("G")}></button>
+                    <button className="key sharp" onClick={() => this.props.onClick("G#")}></button>
+                </div>
+                
+                <div className="keyGroup">
+                    <button className="key" onClick={() => this.props.onClick("A")}></button>
+                    <button className="key sharp" onClick={() => this.props.onClick("A#")}></button>
+                </div>
+                
+                <button className="key" onClick={() => this.props.onClick("B")}></button>
             </div>
         );
     }

@@ -13,8 +13,8 @@ export default class App extends React.Component {
     };
   }
 
-  handleClick(note) {
-    let correctAnswer = this.state.currentNote === note;
+  handleClick(pianoKey) {
+    let correctAnswer = this.state.currentNote === pianoKey;
     let score = this.state.score;
 
     if(correctAnswer) {
@@ -42,7 +42,7 @@ export default class App extends React.Component {
           <p>{this.state.score}/{this.props.questions}</p>
         </div>
         <Display note={this.state.currentNote} />
-        <Input notes={this.props.notes} onClick={(note) => this.handleClick(note)} />
+        <Input onClick={(pianoKey) => this.handleClick(pianoKey)} />
       </div>
     );
   }
