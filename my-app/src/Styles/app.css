@@ -1,0 +1,161 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.button {
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button.light {
+    background-color: white;
+    color: #004650;
+}
+
+/* HOME -------------------------------------- */
+
+.Home {
+    background: rgb(23,0,93);
+    background: linear-gradient(0deg, #00B3CC 0%, #d6ff7f 100%);
+    height: 100vh;
+}
+
+.Home .top {
+    height: calc(50% - 70px);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.Home .bottom {
+    margin-top: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.Home .wave {
+    height: 140px;
+    width: 100%;
+    position: absolute;
+    bottom: calc(50% - 70px);
+    z-index: 1;
+}
+
+.Home .wave path {
+    fill: rgb(255, 255, 255);
+}
+
+.Home h1 {
+    margin: 0;
+}
+
+/* GAME -------------------------------------- */
+
+.Game {
+    margin: 0 auto;
+    max-width: 450px;
+    text-align: center;
+}
+
+.Game .Display {
+    margin-bottom: 4em;
+}
+
+.Game .Display .staff {
+    border-left: 4px solid black;
+    position: relative;
+}
+
+.Game .Display .clef {
+    height: 180px;
+    left: 0;
+    position: absolute;
+    top: -40px;
+}
+
+.Display .line {
+    border-bottom: 2px solid black;
+    position: relative;
+}
+
+.Game .Display .space {
+    padding: 11px;
+    position: relative;
+}
+
+.Game .Display .note {
+    background-color: black;
+    border-radius: 100%;
+    height: 22px;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    width: 34px; 
+}
+
+.Game .Display .line .note {
+    top: -10px;
+}
+
+.Game .Display .note .sharp {
+    height: 40px;
+    margin: -10px 0 0 -75px;
+    width: 25px;
+}
+
+.Game .Display .note .flat {
+    margin: -20px 0 0 -75px;
+    width: 25px;
+}
+
+.Game .Input {
+    display: flex;
+    justify-content: center;
+}
+
+.Game .Input .keyGroup {
+    position: relative;
+}
+
+.Game .Input .key {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0 0 2px 2px;
+    height: 100px;
+    width: 30px;
+}
+
+.Game .Input .key:hover {
+    background-color: #e2fffd;
+}
+
+.Game .Input .key:active {
+    background-color: #dedede;
+}
+
+.Game .Input .key.sharp {
+    background-color: #000;
+    color: white;
+    height: 70px;
+    left: 20px;
+    position: absolute;
+    width: 20px;
+    z-index: 1;
+}
+
+.Game .Input .key.sharp:hover {
+    background-color: #003b6a;
+}
+
+.Game .Input .key.sharp:active {
+    background-color: #333;
+}

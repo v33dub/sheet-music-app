@@ -2,12 +2,12 @@ import React from 'react';
 import {
   BrowserRouter,
   Routes,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
 import Home from './Home';
 import Game from './Game';
 import Note from '../Classes/Note';
+import '../Styles/app.css';
 
 export default function App() {
   return (

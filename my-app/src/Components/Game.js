@@ -1,7 +1,6 @@
 import React from 'react';
 import Display from './Display';
 import Input from './Input';
-import '../App.css';
 
 export default class Game extends React.Component {
   constructor(props) {
