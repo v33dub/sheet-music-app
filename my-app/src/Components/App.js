@@ -1,69 +1,48 @@
 import React from 'react';
-import Display from './Display';
-import Input from './Input';
-import '../App.css';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from 'react-router-dom';
+import Home from './Home';
+import Game from './Game';
+import Note from '../Classes/Note';
+import '../Styles/app.css';
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentNote: this.getNote(),
-      questionsLeft: this.props.questions,
-      score: 0
-    };
-  }
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/game" element={<PlayGame />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
-  handleClick(pianoKey) {
-    let score = this.state.score;
-
-    if(this.isSameNote(pianoKey)) {
-      console.log("Correct!");
-      score++;
-    } else {
-      console.log("Incorrect");
-    }
-
-    this.setState({
-      currentNote: this.getNote(),
-      questionsLeft: this.state.questionsLeft - 1,
-      score: score
-    });
-  }
-
-  isSameNote(pianoKey) {
-    return pianoKey.find(note => 
-      note.letter === this.state.currentNote.letter && 
-      note.octave === this.state.currentNote.octave &&
-      note.isSharp === this.state.currentNote.isSharp &&
-      note.isFlat === this.state.currentNote.isFlat
-    );
-  }
-
-  getNote() {
-    return this.props.notes[Math.floor(Math.random() * this.props.notes.length)];
-  }
-  
-  getGame() {
-    return (
-      <div className="App">
-        <div className="Score">
-          <p>{this.state.score}/{this.props.questions}</p>
-        </div>
-        <Display note={this.state.currentNote} />
-        <Input onClick={(pianoKey) => this.handleClick(pianoKey)} />
-      </div>
-    );
-  }
-
-  getScoreDisplay() {
-    return (
-      <div className="App">
-        <p>Your score is: {this.state.score} / {this.props.questions}</p>
-      </div>
-    );
-  }
-
-  render() {
-    return this.state.questionsLeft > 0 ? this.getGame() : this.getScoreDisplay();
-  }
+function PlayGame() {
+  return <Game questions={10} notes={[
+      new Note("E", 4, false, true),
+      new Note("E", 4, false, false),
+      new Note("F", 4, false, false),
+      new Note("F", 4, true, false),
+      new Note("G", 4, false, true),
+      new Note("G", 4, false, false),
+      new Note("G", 4, true, false),
+      new Note("A", 5, false, true),
+      new Note("A", 5, false, false),
+      new Note("A", 5, true, false),
+      new Note("B", 5, false, true),
+      new Note("B", 5, false, false),
+      new Note("C", 5, false, false),
+      new Note("C", 5, true, false),
+      new Note("D", 5, false, true),
+      new Note("D", 5, false, false),
+      new Note("D", 5, true, false),
+      new Note("E", 5, false, true),
+      new Note("E", 5, false, false),
+      new Note("F", 5, false, false),
+      new Note("F", 5, true, false),
+    ]} 
+  />
 }
