@@ -88,12 +88,12 @@ body {
 }
 
 .Game .Score .score-item .correct {
-    color: #10c5a3;
+    color: #a6e773;
     font-weight: bold;
 }
 
 .Game .Score .score-item .incorrect {
-    color: #ff5272;
+    color: #03b4cb;
     font-weight: bold;
 }
 
