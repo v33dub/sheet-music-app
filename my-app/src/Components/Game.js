@@ -48,8 +48,18 @@ export default class Game extends React.Component {
         <div className="Score">
           <p>{this.state.score}/{this.props.questions}</p>
         </div>
-        <Display note={this.state.currentNote} />
-        <Input onClick={(pianoKey) => this.handleClick(pianoKey)} />
+        <div className="core">
+          <Display note={this.state.currentNote} />
+          <Input onClick={(pianoKey) => this.handleClick(pianoKey)} />
+        </div>
+        <div className="background">
+            <div class="top">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none" className="wave">
+                <path d="M0,96L120,128C240,160,480,224,720,224C960,224,1200,160,1320,128L1440,96L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path>
+              </svg>
+            </div>
+            <div class="bottom"></div>
+        </div>
       </div>
     );
   }
