@@ -7,7 +7,7 @@ export default class Game extends React.Component {
     super(props);
     this.state = {
       currentNote: this.getNote(),
-      questionsLeft: this.props.questions,
+      currentQuestion: 1,
       score: 0
     };
   }
@@ -24,7 +24,7 @@ export default class Game extends React.Component {
 
     this.setState({
       currentNote: this.getNote(),
-      questionsLeft: this.state.questionsLeft - 1,
+      currentQuestion: this.state.currentQuestion + 1,
       score: score
     });
   }
@@ -46,19 +46,28 @@ export default class Game extends React.Component {
     return (
       <div className="Game">
         <div className="Score">
-          <p>{this.state.score}/{this.props.questions}</p>
+          <div className="score-item">
+            <h4>Question:</h4>
+            <p>{this.state.currentQuestion}/{this.props.questions}</p>
+          </div>
+          
+          <div className="score-item">
+            <h4>Score:</h4>
+            <p>{this.state.score} <span className="correct">✔</span></p>
+            <p>{this.state.currentQuestion - this.state.score - 1} <span className="incorrect">✖</span></p>
+          </div>
         </div>
         <div className="core">
           <Display note={this.state.currentNote} />
           <Input onClick={(pianoKey) => this.handleClick(pianoKey)} />
         </div>
         <div className="background">
-            <div class="top">
+            <div className="top">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none" className="wave">
                 <path d="M0,96L120,128C240,160,480,224,720,224C960,224,1200,160,1320,128L1440,96L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path>
               </svg>
             </div>
-            <div class="bottom"></div>
+            <div className="bottom"></div>
         </div>
       </div>
     );
@@ -73,6 +82,6 @@ export default class Game extends React.Component {
   }
 
   render() {
-    return this.state.questionsLeft > 0 ? this.getGame() : this.getScoreDisplay();
+    return this.state.currentQuestion <= this.props.questions ? this.getGame() : this.getScoreDisplay();
   }
 }

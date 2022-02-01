@@ -67,8 +67,34 @@ body {
 }
 
 .Game .Score {
-    text-align: right;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
     z-index: 1;
+}
+
+.Game .Score .score-item {
+    display: flex;
+    align-items: baseline;
+    margin-left: 2em;
+}
+
+.Game .Score .score-item:first-of-type {
+    margin-left: 0;
+}
+
+.Game .Score .score-item p {
+    margin-left: 0.5em;
+}
+
+.Game .Score .score-item .correct {
+    color: #10c5a3;
+    font-weight: bold;
+}
+
+.Game .Score .score-item .incorrect {
+    color: #ff5272;
+    font-weight: bold;
 }
 
 .Game .core {
