@@ -76,7 +76,7 @@ export default class Game extends React.Component {
   getScoreDisplay() {
     return (
       <div className="Game">
-        <p>Your score is: {this.state.score} / {this.props.questions}</p>
+        <p className="FinalScore">Your score is: {this.state.score} / {this.props.questions}</p>
       </div>
     );
   }
